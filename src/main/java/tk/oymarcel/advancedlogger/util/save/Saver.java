@@ -1,27 +1,38 @@
 package tk.oymarcel.advancedlogger.util.save;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import tk.oymarcel.advancedlogger.AdvancedLogger;
 
-import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class Saver {
 
-    public static final String ranpath = AdvancedLogger.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static File file;
+
+    private static final String ranpath = AdvancedLogger.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+
+    /*
+     * Writes and saves everything to a json
+     * @param fileName The name of the file to be generated
+     * @paran write The string to be written to the file
+     */
     public static void writeFile(String fileName, String write) {
-        System.out.println(ranpath);
+        file = new File(fileName + File.separator + "advancedLogger/latest.log");
 
-        try (BufferedWriter wr = Files.newBufferedWriter(Paths.get(fileName), StandardCharsets.UTF_8)) {
-            wr.write(write);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(!file.getParentFile().exists()){
+            file.getParentFile().mkdirs();
         }
-
+        try{
+            file.createNewFile();
+            FileWriter fw = new FileWriter(file.getPath());
+            fw.write(write);
+            fw.flush();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

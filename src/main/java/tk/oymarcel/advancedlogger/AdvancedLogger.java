@@ -19,15 +19,27 @@ public class AdvancedLogger {
 
 
 
-    public static void initialize(String appName){
+    /*
+    * Register the advanced logger to activate it
+    * @param appName your application name that the logger will display
+     */
+    public static void register(String appName){
          applicationName = appName;
          System.out.println("AdvancedLogger was initialized by " + appName);
-         inform(logName);
     }
+    /*
+    * Turn on and off logging to file
+    * @param logToFile toggle if logging to file is enabled
+    * @param logType all logs the informations too and errorsOnly only logs the logs produced by the alert function
+     */
     public static void log(boolean logToFile, LogType logType){
         logToFile = logToFile;
     }
     private static String logName = "log-" + format.format(date) + "-" + applicationName;
+
+    /*
+    * Produce an informative message
+     */
     public static void inform(String message){
         if(applicationName != null){
             System.out.println("[" + format.format(date) + "] " + "[" + applicationName + "] [Main/INFO]: " +  message);
@@ -40,6 +52,11 @@ public class AdvancedLogger {
         }
 
     }
+
+    /*
+     * Produce a warning message
+     * @param alertTypes warning gives a warning, error gives an error, and fatal gives an error and crashes right after
+     */
     public static void alert(String message, AlertType alertTypes){
         if(applicationName != null){
             if(alertTypes == AlertType.warning){
