@@ -20,7 +20,6 @@ For the first example we have: </br>
 ```
 </br> Output:
 ```AdvancedLogger was initialized by tester
-[16:16:15] [tester] [Main/INFO]: log-16:16:15-null
 [16:16:15] [tester] [Main/INFO]: This is a information
 [16:16:15] [tester] [Main/ALERT]: This is a warning
 [16:16:15] [tester] [Main/ERROR]: This is a error
@@ -30,7 +29,6 @@ Process finished with exit code 0
 But, if we add ```AdvancedLogger.alert("This is an error that determined a crash", AlertType.fatal);```, the program will crash right after.</br>
 Output:
 ```AdvancedLogger was initialized by tester
-[16:18:19] [tester] [Main/INFO]: log-16:18:19-null
 [16:18:19] [tester] [Main/INFO]: This is a information
 [16:18:19] [tester] [Main/ALERT]: This is a warning
 [16:18:19] [tester] [Main/ERROR]: This is a error
