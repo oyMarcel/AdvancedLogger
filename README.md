@@ -1,5 +1,50 @@
 # How to use
-### Make sure to grab the latest jar from Releases and import it as a jar library
+### Installing
+Just use Maven or Gradle </br>
+#### Maven:</br>
+- Add the JitPack repository: </br>
+```
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+</br>
+
+- And finally add the dependency:
+```
+<dependency>
+	    <groupId>com.github.oyMarcel</groupId>
+	    <artifactId>AdvancedLogger</artifactId>
+	    <version>v1.0</version>
+	</dependency>
+```
+</br>
+
+#### Gradle:
+- Add the JitPack repository: </br>
+
+```	
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+</br>
+
+- And finally add the dependency:
+```
+dependencies {
+		implementation 'com.github.User:Repo:Tag'
+	}
+```
+</br>
+
+### Initialize the logger
 Firstly, we want to initialize the logger so it knows if to work or not, and what is your project name. We can do that by using the line
 ```AdvancedLogger.initialize("yourAppName");``` ,where "yourAppName" is your app's name.</br>
 Now, we can finally create a log.</br>
