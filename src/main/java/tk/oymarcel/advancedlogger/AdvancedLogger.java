@@ -28,12 +28,10 @@ public class AdvancedLogger {
          System.out.println("AdvancedLogger was initialized by " + appName);
     }
     /*
-    * Turn on and off logging to file
-    * @param logToFile toggle if logging to file is enabled
+    * Switch logging types
     * @param logType all logs the informations too and errorsOnly only logs the logs produced by the alert function
      */
-    public static void log(boolean logToFile, LogType logType){
-        logToFile = logToFile;
+    public static void logType(LogType logType){
     }
     private static String logName = "log-" + format.format(date) + "-" + applicationName;
 
@@ -44,7 +42,7 @@ public class AdvancedLogger {
         if(applicationName != null){
             System.out.println("[" + format.format(date) + "] " + "[" + applicationName + "] [Main/INFO]: " +  message);
 
-            if (logToFile && logType == LogType.all){
+            if (logType == LogType.all){
                 Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/INFO]: " +  message);
             }
         } else {
@@ -61,23 +59,16 @@ public class AdvancedLogger {
         if(applicationName != null){
             if(alertTypes == AlertType.warning){
                 System.out.println("[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ALERT]: " +  message);
-                if (logToFile){
-                    Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ALERT]: " +  message);
-                }
+                Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ALERT]: " +  message);
             }
             else if(alertTypes == AlertType.error){
                 System.out.println("[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
-                if (logToFile){
-                    Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
-
-                }
+                Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
             }
             else if(alertTypes == AlertType.fatal){
                 System.out.println("[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
-                if (logToFile){
-                    Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
-                    Saver.writeFile(logName, "This error was fatal.");
-                }
+                Saver.writeFile(logName,"[" + format.format(date) + "] " +"[" + applicationName + "] [Main/ERROR]: " +  message);
+                Saver.writeFile(logName, "This error was fatal.");
                 System.exit(-1);
             }
 

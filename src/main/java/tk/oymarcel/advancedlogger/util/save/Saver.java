@@ -20,7 +20,7 @@ public class Saver {
      * @paran write The string to be written to the file
      */
     public static void writeFile(String fileName, String write) {
-        file = new File(fileName + File.separator + "advancedLogger/latest.log");
+        file = new File(fileName + File.separator + "C:\\AdvancedLogs");
 
         if(!file.getParentFile().exists()){
             file.getParentFile().mkdirs();
