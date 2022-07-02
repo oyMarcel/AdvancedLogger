@@ -39,8 +39,8 @@ allprojects {
 - And finally add the dependency:
 ```
 dependencies {
-		implementation 'com.github.User:Repo:Tag'
-	}
+		implementation 'com.github.oyMarcel:AdvancedLogger:v1.0
+		}
 ```
 </br>
 
