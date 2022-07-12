@@ -39,7 +39,7 @@ allprojects {
 - And finally add the dependency:
 ```
 dependencies {
-		implementation 'com.github.oyMarcel:AdvancedLogger:v1.0
+		implementation 'com.github.oyMarcel:AdvancedLogger:v1.0'
 		}
 ```
 </br>
