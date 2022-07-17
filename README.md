@@ -18,7 +18,7 @@ Just use Maven or Gradle </br>
 <dependency>
 	    <groupId>com.github.oyMarcel</groupId>
 	    <artifactId>AdvancedLogger</artifactId>
-	    <version>v1.0</version>
+	    <version>v1.1</version>
 	</dependency>
 ```
 </br>
@@ -39,7 +39,7 @@ allprojects {
 - And finally add the dependency:
 ```
 dependencies {
-		implementation 'com.github.oyMarcel:AdvancedLogger:v1.0'
+		implementation 'com.github.oyMarcel:AdvancedLogger:v1.1'
 		}
 ```
 </br>
