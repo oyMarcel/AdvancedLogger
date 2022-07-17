@@ -19,24 +19,24 @@ public class AdvancedLogger {
 
 
 
-    /*
-    * Register the advanced logger to activate it
-    * @param appName your application name that the logger will display
+    /**
+     * Register the advanced logger to activate it
+     * @param appName your application name that the logger will display
      */
     public static void register(String appName){
-         applicationName = appName;
-         System.out.println("AdvancedLogger was initialized by " + appName);
+        applicationName = appName;
+        System.out.println("AdvancedLogger was initialized by " + appName);
     }
-    /*
-    * Switch logging types
-    * @param logType all logs the informations too and errorsOnly only logs the logs produced by the alert function
+    /**
+     * Switch logging types
+     * @param logType all logs the informations too and errorsOnly only logs the logs produced by the alert function
      */
     public static void logType(LogType logType){
     }
     private static String logName = "log-" + format.format(date) + "-" + applicationName;
 
-    /*
-    * Produce an informative message
+    /**
+     * Produce an informative message
      */
     public static void inform(String message){
         if(applicationName != null){
@@ -51,7 +51,7 @@ public class AdvancedLogger {
 
     }
 
-    /*
+    /**
      * Produce a warning message
      * @param alertTypes warning gives a warning, error gives an error, and fatal gives an error and crashes right after
      */
