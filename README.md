@@ -44,9 +44,9 @@ dependencies {
 ```
 </br>
 
-### Initialize the logger
+### Register the logger
 Firstly, we want to initialize the logger so it knows if to work or not, and what is your project name. We can do that by using the line
-```AdvancedLogger.initialize("yourAppName");``` ,where "yourAppName" is your app's name.</br>
+```AdvancedLogger.register("yourAppName");``` ,where "yourAppName" is your app's name.</br>
 Now, we can finally create a log.</br>
 ### Logging
 We can use ```AdvancedLogger.inform(message)```, where "message" is your message, to inform the user about someting. Using this would output ```[15:53:14] [yourAppName] [Main/INFO]: message```</br>
@@ -57,7 +57,7 @@ Alternatively, we can use ``` AdvancedLogger.alert("message", AlertType.type);``
 For the first example we have: </br>
 ``` public static void main(String[] args)
     {
-        AdvancedLogger.initialize("tester");
+        AdvancedLogger.register("tester");
         AdvancedLogger.inform("This is a information");
         AdvancedLogger.alert("This is a warning", AlertType.warning);
         AdvancedLogger.alert("This is a error", AlertType.error);
